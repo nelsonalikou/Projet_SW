@@ -1,0 +1,5 @@
+cd /mnt/c/xampp/htdocs/Projet_SW
+php -S localhost:8080
+C:\xampp\htdocs\Projet_SW\wsdl\HelloService.wsdl
+C:\xampp\htdocs\Projet_SW\soap-api\wsdl\MonServeur.wsdl
+cd ~/python-environments && source env/bin/activate

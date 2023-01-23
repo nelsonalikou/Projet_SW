@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/Projet_SW/server.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<SOAP-ENV:Body>
+		<ns1:getAgentClassResponse>
+			<return xsi:type="xsd:string">[{&quot;name&quot;:&quot;Omen&quot;,&quot;class&quot;:&quot;Controller&quot;}]</return>
+		</ns1:getAgentClassResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

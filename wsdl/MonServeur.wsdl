@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/Projet_SW/server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="MonServeur" targetNamespace="http://localhost/Projet_SW/server.php">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/Projet_SW/server.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="MonServeurPort">
+    <operation name="getAgentsList">
+      <documentation>R&#xE9;cuperation de la liste des agents contenus dans notre base de donn&#xE9;es ainsi que leur classe</documentation>
+      <input message="tns:getAgentsListIn"/>
+      <output message="tns:getAgentsListOut"/>
+    </operation>
+    <operation name="getAgentClass">
+      <documentation>R&#xE9;cuperation de la classe d'un agent &#xE0; partir de son nom donn&#xE9; en param&#xE8;tre</documentation>
+      <input message="tns:getAgentClassIn"/>
+      <output message="tns:getAgentClassOut"/>
+    </operation>
+    <operation name="getLocationsList">
+      <documentation>Recuperer la liste des localisations</documentation>
+      <input message="tns:getLocationsListIn"/>
+      <output message="tns:getLocationsListOut"/>
+    </operation>
+    <operation name="getClassesList">
+      <documentation>Recuperer la liste des classes</documentation>
+      <input message="tns:getClassesListIn"/>
+      <output message="tns:getClassesListOut"/>
+    </operation>
+    <operation name="addAgent">
+      <documentation>addAgent</documentation>
+      <input message="tns:addAgentIn"/>
+      <output message="tns:addAgentOut"/>
+    </operation>
+    <operation name="addClass">
+      <documentation>Ajouter une nouvelle classe d'agent</documentation>
+      <input message="tns:addClassIn"/>
+      <output message="tns:addClassOut"/>
+    </operation>
+    <operation name="deleteAgent">
+      <documentation>deleteAgent</documentation>
+      <input message="tns:deleteAgentIn"/>
+      <output message="tns:deleteAgentOut"/>
+    </operation>
+    <operation name="updateAgentInfo">
+      <documentation>updateAgentInfo</documentation>
+      <input message="tns:updateAgentInfoIn"/>
+      <output message="tns:updateAgentInfoOut"/>
+    </operation>
+    <operation name="getCityNameFromCP">
+      <documentation>Appel &#xE0; l'API du gouvernement pour retrouver le nom d'une ville &#xE0; partir de son code postal
+
+Lien vers l'API : https://geo.api.gouv.fr/decoupage-administratif/communes#name</documentation>
+      <input message="tns:getCityNameFromCPIn"/>
+    </operation>
+  </portType>
+  <binding name="MonServeurBinding" type="tns:MonServeurPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getAgentsList">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#getAgentsList"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="getAgentClass">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#getAgentClass"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="getLocationsList">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#getLocationsList"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="getClassesList">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#getClassesList"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="addAgent">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#addAgent"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="addClass">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#addClass"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="deleteAgent">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#deleteAgent"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="updateAgentInfo">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#updateAgentInfo"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+    <operation name="getCityNameFromCP">
+      <soap:operation soapAction="http://localhost/Projet_SW/server.php#getCityNameFromCP"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/Projet_SW/server.php"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="getAgentsListIn"/>
+  <message name="getAgentsListOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="getAgentClassIn">
+    <part name="agentName" type="xsd:string"/>
+  </message>
+  <message name="getAgentClassOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="getLocationsListIn"/>
+  <message name="getLocationsListOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="getClassesListIn"/>
+  <message name="getClassesListOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="addAgentIn">
+    <part name="agentName" type="xsd:anyType"/>
+    <part name="agentGender" type="xsd:anyType"/>
+    <part name="agentClass" type="xsd:anyType"/>
+    <part name="agentPosition" type="xsd:anyType"/>
+  </message>
+  <message name="addAgentOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="addClassIn">
+    <part name="className" type="xsd:string"/>
+    <part name="classDescription" type="xsd:string"/>
+  </message>
+  <message name="addClassOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="deleteAgentIn">
+    <part name="agentId" type="xsd:anyType"/>
+  </message>
+  <message name="deleteAgentOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="updateAgentInfoIn">
+    <part name="agentId" type="xsd:anyType"/>
+    <part name="agentName" type="xsd:anyType"/>
+    <part name="agentGender" type="xsd:anyType"/>
+    <part name="agentClass" type="xsd:anyType"/>
+    <part name="agentPosition" type="xsd:anyType"/>
+  </message>
+  <message name="updateAgentInfoOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <message name="getCityNameFromCPIn">
+    <part name="postalCode" type="xsd:int"/>
+  </message>
+  <service name="MonServeurService">
+    <port name="MonServeurPort" binding="tns:MonServeurBinding">
+      <soap:address location="http://localhost/Projet_SW/server.php"/>
+    </port>
+  </service>
+</definitions>

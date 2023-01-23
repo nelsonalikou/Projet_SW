@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://localhost/Projet_SW/soap-api/php/server/server.php" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<SOAP-ENV:Body>
+		<ns1:getCityNameFromCPResponse>
+			<return xsi:type="xsd:string">[{&quot;nom&quot;:&quot;Orl\u00e9ans&quot;,&quot;code&quot;:&quot;45234&quot;,&quot;codeDepartement&quot;:&quot;45&quot;,&quot;siren&quot;:&quot;214502346&quot;,&quot;codeEpci&quot;:&quot;244500468&quot;,&quot;codeRegion&quot;:&quot;24&quot;,&quot;codesPostaux&quot;:[&quot;45000&quot;,&quot;45100&quot;],&quot;population&quot;:116269}]</return>
+		</ns1:getCityNameFromCPResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
